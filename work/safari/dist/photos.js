@@ -851,5 +851,95 @@ const GALLERY={
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
    "source": "https://commons.wikimedia.org/wiki/File:Lizard_at_Haller_park_mombasa.jpg"
   }
+ ],
+ "rockhyrax": [
+  {
+   "file": "./assets/photos/rockhyrax-2.jpg",
+   "author": "Bjørn Christian Tørrissen",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Procavia-capensis-Frontal.JPG"
+  }
+ ],
+ "klipspringer": [
+  {
+   "file": "./assets/photos/klipspringer-2.jpg",
+   "author": "Frank Vassen",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Klipspringer,_Namibia_(3927384342).jpg"
+  }
+ ],
+ "oryx": [
+  {
+   "file": "./assets/photos/oryx-2.jpg",
+   "author": "Darren Obbard",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Oryx_beisa_callotis_355736277.jpg"
+  }
+ ],
+ "colobus": [
+  {
+   "file": "./assets/photos/colobus-2.jpg",
+   "author": "Charles J. Sharp",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Abyssinian_black-and-white_colobus_(Colobus_guereza_guereza)_male.jpg"
+  }
+ ],
+ "bluemonkey": [
+  {
+   "file": "./assets/photos/bluemonkey-2.jpg",
+   "author": "ZiemowitJ",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Cercopithecus_mitis_ssp._albogularis.jpg"
+  }
+ ],
+ "aardvark": [
+  {
+   "file": "./assets/photos/aardvark-2.jpg",
+   "author": "Louise Joubert",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Orycteropus_afer00.jpg"
+  }
+ ],
+ "dwarfmongoose": [
+  {
+   "file": "./assets/photos/dwarfmongoose-2.jpg",
+   "author": "Bernard DUPONT",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Dwarf_Mongoose_(Helogale_parvula)_showing_teeth_(12714953334).jpg"
+  }
+ ],
+ "porcupine": [
+  {
+   "file": "./assets/photos/porcupine-2.jpg",
+   "author": "Kati Fleming",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:South_African_Cape_Porcupine,_Hystrix_africaeaustralis;_porcupine_quills_close_up.JPG"
+  }
+ ],
+ "springhare": [
+  {
+   "file": "./assets/photos/springhare-2.jpg",
+   "author": "Bernard DUPONT",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:East_African_Springhare_(Pedetes_surdaster)_(8290878677).jpg"
+  }
+ ],
+ "wildcat": [
+  {
+   "file": "./assets/photos/wildcat-2.jpg",
+   "author": "Rute Martins of Leoa's Photography",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:African_Wildcat-001.jpg"
+  }
  ]
 };

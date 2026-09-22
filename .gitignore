@@ -27,3 +27,4 @@ WildPocket-Android/*.keystore
 # Editor
 .vscode/
 .idea/
+.claude/

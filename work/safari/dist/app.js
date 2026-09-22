@@ -1,8 +1,8 @@
 const $=s=>document.querySelector(s);
 let route='all',period='day',category='全部',onlyUnseen=false,probabilityOrder='desc',collectionRarity='common',seen=new Set();
 // Relative field estimate, not a guarantee or real-time population statistic.
-const encounterBase={lion:25,leopard:10,cheetah:14,hyena:38,elephant:72,buffalo:70,rhino:8,hippo:32,giraffe:56,zebra:82,wildebeest:86,impala:88,thomson:76,grant:62,topi:45,eland:30,warthog:50,baboon:54,ostrich:42,crocodile:22,waterbuck:34,hartebeest:28,dikdik:18,jackal:30,serval:8,bateared:12,crane:18,secretary:11,bustard:20};
-const nightLift={lion:1.15,leopard:1.65,cheetah:.7,hyena:1.45,elephant:1.05,buffalo:1.2,rhino:.75,hippo:1.35,giraffe:.55,zebra:.65,wildebeest:.7,impala:.8,thomson:.7,grant:.7,topi:.7,eland:.7,warthog:1.05,baboon:.55,ostrich:.45,crocodile:.8,waterbuck:.95,hartebeest:.65,dikdik:1.15,jackal:1.4,serval:1.75,bateared:1.8,crane:.5,secretary:.45,bustard:.5};
+const encounterBase={lion:25,leopard:10,cheetah:14,hyena:38,elephant:72,buffalo:70,rhino:8,hippo:32,giraffe:56,zebra:82,wildebeest:86,impala:88,thomson:76,grant:62,topi:45,eland:30,warthog:50,baboon:54,ostrich:42,crocodile:22,waterbuck:34,hartebeest:28,dikdik:18,jackal:30,serval:8,bateared:12,crane:18,secretary:11,bustard:20,rockhyrax:70,klipspringer:32,oryx:12,colobus:24,bluemonkey:20,bushbaby:22,aardvark:3,slendermongoose:24,dwarfmongoose:38,porcupine:14,springhare:32,wildcat:12};
+const nightLift={lion:1.15,leopard:1.65,cheetah:.7,hyena:1.45,elephant:1.05,buffalo:1.2,rhino:.75,hippo:1.35,giraffe:.55,zebra:.65,wildebeest:.7,impala:.8,thomson:.7,grant:.7,topi:.7,eland:.7,warthog:1.05,baboon:.55,ostrich:.45,crocodile:.8,waterbuck:.95,hartebeest:.65,dikdik:1.15,jackal:1.4,serval:1.75,bateared:1.8,crane:.5,secretary:.45,bustard:.5,wildcat:1.5};
 const birds=new Set(['ostrich','crane','secretary','bustard']);const reptiles=new Set(['crocodile']);
 const kindOf=a=>birds.has(a.id)?'鸟类':reptiles.has(a.id)?'爬行动物':'哺乳动物';
 function encounterScore(a){const raw=encounterBase[a.id]||20;const periodFactor=period==='night'?(nightLift[a.id]||1):1;return Math.max(1,Math.min(95,Math.round(raw*periodFactor)))}
