@@ -2,13 +2,11 @@
   <view class="sticky-filters">
     <view class="filters-row">
       <view class="location-control">
-        <text class="eyebrow">地点</text>
         <picker mode="selector" range="{{locations}}" range-key="label" value="{{routeIndex}}" bindchange="onRouteChange">
           <view class="location-select">{{routeLabel}} <text class="chev">⌄</text></view>
         </picker>
       </view>
       <view class="time-control">
-        <text class="eyebrow">观察时段</text>
         <view class="time-options">
           <view class="time-btn {{period==='day' ? 'active' : ''}}" data-period="day" bindtap="onPeriod">☀️ 日间</view>
           <view class="time-btn {{period==='night' ? 'active' : ''}}" data-period="night" bindtap="onPeriod">🌙 夜间</view>

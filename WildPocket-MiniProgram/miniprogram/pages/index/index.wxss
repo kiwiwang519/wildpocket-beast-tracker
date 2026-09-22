@@ -2,10 +2,10 @@
 
 .sticky-filters { position: sticky; top: 0; z-index: 10; background: #fff; padding: 16rpx 24rpx 8rpx; box-shadow: 0 1rpx 0 rgba(60,60,67,.18); }
 
-.filters-row { display: flex; gap: 16rpx; padding: 20rpx; background: #f2f2f7; border-radius: 24rpx; margin-bottom: 16rpx; }
+.filters-row { display: flex; gap: 16rpx; padding: 16rpx; background: #f2f2f7; border-radius: 24rpx; margin-bottom: 16rpx; align-items: center; }
 .location-control { flex: 1; min-width: 0; }
-.eyebrow { display: block; font-size: 22rpx; color: #8a8a8e; margin-bottom: 6rpx; }
-.location-select { height: 80rpx; line-height: 80rpx; padding: 0 16rpx; background: #fff; border-radius: 16rpx; font-size: 28rpx; font-weight: 600; }
+
+.location-select { height: 72rpx; line-height: 72rpx; padding: 0 16rpx; background: #fff; border-radius: 16rpx; font-size: 24rpx; font-weight: 600; }
 .chev { color: #999; font-size: 22rpx; }
 .time-control { }
 .time-options { display: flex; height: 80rpx; background: #e3e3e8; border-radius: 16rpx; overflow: hidden; }
@@ -20,7 +20,7 @@
 .cat-btn.active { color: #1d1d1f; font-weight: 700; border-color: #718b36; }
 
 .results-row { display: flex; align-items: center; justify-content: space-between; padding-bottom: 16rpx; font-size: 24rpx; color: #8a8a8e; }
-.result-actions { display: flex; align-items: center; gap: 24rpx; }
+.result-actions { display: flex; align-items: center; gap: 28rpx; padding-left: 24rpx; border-left: 1px solid rgba(60,60,67,.22); }
 .sort-btn, .seen-btn { color: #172e25; font-weight: 500; }
 .seen-btn.active { font-weight: 700; }
 

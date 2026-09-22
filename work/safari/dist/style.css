@@ -57,7 +57,7 @@ dialog:focus,dialog:focus-visible{outline:none}
 .mobile-tabbar{display:none}
 
 .gallery-swipe{display:flex;align-items:center;justify-content:center;gap:10px;height:34px;color:#849084}.gallery-swipe button{font:inherit;font-size:24px;line-height:1;font-weight:300;border:0;background:none;color:inherit;padding:0;cursor:pointer}.gallery-swipe i{font-style:normal;font-size:18px;letter-spacing:2px;color:#637b2e}
-.detail-gallery-wrap{position:relative}.detail-gallery-wrap .gallery-swipe{position:absolute;z-index:2;top:50%;left:14px;right:14px;transform:translateY(-50%);display:flex;justify-content:space-between;align-items:center;height:auto;color:#fff;text-shadow:0 1px 4px #172e2599}.detail-gallery-wrap .gallery-swipe button{font:inherit;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:#172e2559;color:#fff;font-size:33px;font-weight:300;line-height:.8;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}.detail-gallery-wrap .gallery-swipe button:active{background:#172e2599}.detail-gallery-wrap+.gallery-swipe{display:none}
+.detail-gallery-wrap{position:relative}.detail-gallery-wrap .gallery-swipe{position:absolute;z-index:2;top:50%;left:14px;right:14px;transform:translateY(-50%);display:flex;justify-content:space-between;align-items:center;height:auto;color:#fff}.detail-gallery-wrap .gallery-swipe button{display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:#172e2559;color:#fff;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}.detail-gallery-wrap .gallery-swipe button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 3px #172e2599)}.detail-gallery-wrap .gallery-swipe button:active{background:#172e2599}.detail-gallery-wrap+.gallery-swipe{display:none}
 
 /* =====================================================================
    Phone shell (≤600px) — one consolidated block following the iOS HIG:
@@ -77,10 +77,10 @@ dialog:focus,dialog:focus-visible{outline:none}
 
  /* 2. Home content: 16pt layout margins, iOS type sizes */
  main{padding:0 16px 16px}
- .global-filters{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:8px;margin:0;padding:10px;border:0;border-radius:12px;background:#f2f2f7;box-shadow:none}
- .location-control label,.time-control legend{display:block;float:none;margin:0 0 3px;padding:0;font-size:12px;line-height:16px;color:#8a8a8e;letter-spacing:0}
- .location-control select{display:block;width:100%;height:44px;min-height:44px;padding:0 8px;border:0;border-radius:8px;background:#fff;color:#1d1d1f;font-size:16px;font-weight:600}
- .time-options{display:flex;height:44px;padding:0;border-radius:8px;background:#e3e3e8;overflow:hidden}.time-options button{flex:1;height:44px;min-height:0;padding:0 14px;border-radius:0;font-size:0}.time-options button svg{width:20px;height:20px}.time-options button[aria-pressed=true]{background:#172e25;color:#fff;box-shadow:none}
+ .global-filters{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;margin:0;padding:8px;border:0;border-radius:12px;background:#f2f2f7;box-shadow:none}
+
+ .location-control select{display:block;width:100%;height:40px;min-height:40px;padding:0 8px;border:0;border-radius:8px;background:#fff;color:#1d1d1f;font-size:14px;font-weight:600}
+ .time-options{display:flex;height:40px;padding:0;border-radius:8px;background:#e3e3e8;overflow:hidden}.time-options button{flex:1;height:40px;min-height:0;padding:0 12px;border-radius:0;font-size:0}.time-options button svg{width:18px;height:18px}.time-options button[aria-pressed=true]{background:#172e25;color:#fff;box-shadow:none}
  /* Search field: 36pt tall, 10pt radius, tertiary fill, 17pt text (≥16pt so iOS does not zoom on focus) */
  .search{display:flex;align-items:center;gap:6px;height:36px;min-height:0;margin:0 0 4px;padding:0 8px;border:0;border-radius:10px;background:rgba(118,118,128,.12)}
  .search .icon{flex:none;color:rgba(60,60,67,.6)}
@@ -94,7 +94,7 @@ dialog:focus,dialog:focus-visible{outline:none}
  nav#categories button[aria-pressed=true]::after{content:"";position:absolute;left:50%;bottom:0;width:22px;height:3px;transform:translateX(-50%);border-radius:99px;background:#718b36}
  /* Results row: footnote count + tinted toolbar-style text buttons */
  .results{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px;min-height:44px;font-size:13px;color:#8a8a8e}
- .result-actions{display:flex;align-items:center;gap:16px}
+ .result-actions{display:flex;align-items:center;gap:16px;padding-left:18px;border-left:.5px solid rgba(60,60,67,.22)}
  .results button{min-height:44px;padding:0;border:0;background:none;color:#172e25;font-size:15px;font-weight:500;line-height:1;text-decoration:none}
  .results .sort-probability{display:inline-flex;align-items:center;gap:2px;min-width:0;padding:0;border:0;background:none;color:#172e25;text-decoration:none}
  .sort-probability span{font-size:15px;font-weight:600;line-height:1}.sort-probability small{font-size:15px;font-weight:500;letter-spacing:0}
@@ -175,7 +175,7 @@ dialog:focus,dialog:focus-visible{outline:none}
 
 /* Sound card: one compact row; notes and credits live behind the info button */
 .animal-sound{margin:16px 0;padding:10px 12px;border-radius:14px}
-.animal-sound .sound-row{display:flex;align-items:center;gap:12px;margin:0}
+.animal-sound .sound-row{display:flex;align-items:center;gap:18px;margin:0}
 .animal-sound .sound-play{width:40px;height:40px;box-shadow:0 1px 5px rgba(23,46,37,.22)}.animal-sound .sound-play svg{width:17px;height:17px}
 .animal-sound .sound-title{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px}
 .animal-sound .sound-title h3{margin:0;padding:0;border:0;font-size:15px;line-height:1.35}
