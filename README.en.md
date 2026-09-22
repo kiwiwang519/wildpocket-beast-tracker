@@ -63,7 +63,7 @@ Both options use a free account, so the app expires after 7 days — just reinst
 
 Android APKs only need an ordinary self-signed certificate — **no paid account, no expiry**, and you can hand the file straight to a friend.
 
-1. Download the latest `寻兽记.apk` from [Releases](../../releases).
+1. Download the latest `WildPocket-Android.apk` from [Releases](../../releases).
 2. Open the file on the phone. If it warns "installation blocked for your protection":
    - Tap Settings, find the relevant browser or file manager, and allow "Install unknown apps" for it.
    - Go back and open the APK again.
