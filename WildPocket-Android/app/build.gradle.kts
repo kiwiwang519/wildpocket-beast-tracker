@@ -11,8 +11,8 @@ android {
         applicationId = "com.wildpocket.eastafrica"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.0.1"
     }
 
     signingConfigs {
@@ -54,6 +54,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.7.0")
+    // No androidx.appcompat: MainActivity is a plain Activity (see MainActivity.kt),
+    // so we only need core-ktx for WindowCompat/ViewCompat.
     implementation("androidx.core:core-ktx:1.13.1")
 }

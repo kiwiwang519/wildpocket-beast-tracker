@@ -56,7 +56,7 @@ miniprogram/
 
 ## 更新数据
 
-动物数据、照片、叫声改了以后，重新生成 `data.json`：
+动物数据、照片、叫声改了以后，重新生成 `data.js`（小程序的模块系统不支持直接 `require()` 一个 `.json` 文件，所以导出成 `.js` 模块）：
 
 ```bash
 cd /Users/rzy/programs/wlx-pro
@@ -64,11 +64,12 @@ node -e '
 const fs=require("fs"),vm=require("vm");const c={};vm.createContext(c);
 const dist="work/safari/dist/";
 vm.runInContext(["animals","habitats","stories","sounds","photos"].map(f=>fs.readFileSync(dist+f+".js","utf8")).join(";")+";globalThis.A=ANIMALS;globalThis.L=LOCATIONS;globalThis.S=STORIES;globalThis.C=CALLS;globalThis.G=GALLERY",c);
-fs.writeFileSync("WildPocket-MiniProgram/miniprogram/data/data.json",JSON.stringify({animals:c.A,locations:c.L,stories:c.S,calls:c.C,gallery:c.G}));
+const out={animals:c.A,locations:c.L,stories:c.S,calls:c.C,gallery:c.G};
+fs.writeFileSync("WildPocket-MiniProgram/miniprogram/data/data.js","module.exports = "+JSON.stringify(out)+";\n");
 '
 ```
 
-改完记得 `git push`，图片改动本身不需要小程序重新上传，只有 `data.json`、页面代码或样式改了才需要在开发者工具里重新上传版本。
+改完记得 `git push`，图片改动本身不需要小程序重新上传，只有 `data.js`、页面代码或样式改了才需要在开发者工具里重新上传版本。
 
 ## 已知限制
 

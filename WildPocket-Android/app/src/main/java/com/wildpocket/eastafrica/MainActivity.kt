@@ -1,18 +1,23 @@
 package com.wildpocket.eastafrica
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.media.AudioManager
 import android.os.Bundle
 import android.view.WindowManager
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowCompat
 
-class MainActivity : AppCompatActivity() {
+// Plain Activity, not AppCompatActivity: AppCompatActivity requires the app to use
+// a Theme.AppCompat (or MaterialComponents) theme and throws IllegalStateException
+// at launch otherwise. Our manifest uses the plain framework Theme.Material — we
+// don't need any AppCompat widgets here (no action bar, no fragments), so a plain
+// Activity plus androidx.core's WindowCompat/ViewCompat is enough and avoids that crash.
+class MainActivity : Activity() {
 
     private lateinit var webView: WebView
 

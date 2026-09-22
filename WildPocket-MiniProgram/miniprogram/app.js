@@ -1,4 +1,4 @@
-const data = require('./data/data.json');
+const data = require('./data/data.js');
 const offline = require('./utils/offline.js');
 
 App({
