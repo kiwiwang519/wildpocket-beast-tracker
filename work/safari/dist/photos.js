@@ -941,5 +941,41 @@ const GALLERY={
    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
    "source": "https://commons.wikimedia.org/wiki/File:African_Wildcat-001.jpg"
   }
+ ],
+ "marabou": [
+  {
+   "file": "./assets/photos/marabou-2.jpg",
+   "author": "Christoph Strässler",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Marabou_Stork,_Seronera_Valley,_Serengeti,_Tanzania.jpg"
+  }
+ ],
+ "blackkite": [
+  {
+   "file": "./assets/photos/blackkite-2.jpg",
+   "author": "A. Davey",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Yellow-billed_Kite,_Harar,_Ethiopia_(2190844112).jpg"
+  }
+ ],
+ "vonderdeckenhornbill": [
+  {
+   "file": "./assets/photos/vonderdeckenhornbill-2.jpg",
+   "author": "Charles J. Sharp",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:Von_der_Decken%27s_hornbill_(Tockus_deckeni)_female_Serengeti.jpg"
+  }
+ ],
+ "mwanzaagama": [
+  {
+   "file": "./assets/photos/mwanzaagama-2.jpg",
+   "author": "Esin Üstün",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Agama_mwanzae_%E2%99%80_Serengeti_Tanzania_(19701447303).jpg"
+  }
  ]
 };
