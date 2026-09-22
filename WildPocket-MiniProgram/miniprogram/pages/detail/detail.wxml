@@ -1,0 +1,69 @@
+<view class="detail-page">
+  <swiper class="gallery" indicator-dots="{{false}}" bindchange="onSwiper" style="height:{{galleryHeight}}px">
+    <swiper-item wx:for="{{images}}" wx:key="*this">
+      <image src="{{item}}" mode="aspectFit" class="gallery-img" />
+    </swiper-item>
+  </swiper>
+  <text wx:if="{{images.length>1}}" class="gallery-count">{{current+1}}/{{images.length}}</text>
+
+  <view class="pad">
+    <view class="name">{{animal.name}}</view>
+    <view class="latin">{{animal.en}} <text class="italic">/ {{animal.latin}}</text></view>
+
+    <view class="tags-row">
+      <text class="tag-pill cat-tag">{{animal.label}}</text>
+      <text class="tag-pill prob-tag">遇见概率 {{probLabel}}</text>
+    </view>
+
+    <view class="section-title">认准这几个特征</view>
+    <view class="trait" wx:for="{{animal.traits}}" wx:key="*this">· {{item}}</view>
+
+    <view wx:if="{{call}}" class="sound-card">
+      <view class="sound-row">
+        <view class="sound-play {{playing ? 'playing' : ''}}" bindtap="onPlaySound">{{playing ? '❚❚' : '▶'}}</view>
+        <view class="sound-title">
+          {{call.label}}
+          <text wx:if="{{call.related}}" class="rel-tag">近缘种</text>
+        </view>
+        <view class="sound-info" bindtap="onToggleInfo">ⓘ</view>
+      </view>
+      <view wx:if="{{soundInfoOpen}}" class="sound-detail">
+        <view wx:if="{{call.note}}" class="sound-note">{{call.note}}</view>
+        <view class="sound-credit">录音：{{call.author}} · {{call.license}}</view>
+      </view>
+    </view>
+
+    <block wx:if="{{story}}">
+      <view class="story-eyebrow">野外故事</view>
+      <view class="story-title">{{story.title}}</view>
+      <view class="story-lead">{{story.lead}}</view>
+      <block wx:for="{{story.sections}}" wx:key="title" wx:for-item="sec">
+        <view class="story-h4">{{sec.title}}</view>
+        <view class="story-p">{{sec.text}}</view>
+      </block>
+      <view class="field-note">
+        <view class="story-eyebrow">在现场，多看一眼</view>
+        <view class="story-p">{{story.watch}}</view>
+      </view>
+    </block>
+
+    <block wx:if="{{similar.length}}">
+      <view class="section-title">相似动物</view>
+      <view class="compare-row">
+        <view class="compare-card" wx:for="{{similar}}" wx:key="id" data-id="{{item.id}}" bindtap="onOpenSimilar">
+          <image src="{{item.src}}" mode="aspectFill" />
+          <view class="compare-text"><text class="compare-name">{{item.name}}</text>{{item.hint}}</view>
+        </view>
+      </view>
+    </block>
+
+    <view class="credit">
+      识别照片：{{animal.credit.author}} · {{animal.credit.license}}
+      <view wx:for="{{morePhotoLines}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="detail-bar">
+    <view class="primary-btn {{isSeen ? 'seen' : ''}}" bindtap="onToggleSeen">{{isSeen ? '✓ 见过 · 点击取消' : '＋ 见过'}}</view>
+  </view>
+</view>

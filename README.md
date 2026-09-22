@@ -13,13 +13,14 @@
 - **完全离线**：所有照片、故事和叫声都在首次联网打开时下载到本机（网页版）或直接打包在安装包内（iOS / Android App），之后断网也能正常使用。
 - **叫声来源**：38 种动物配有真实录音，来自 Wikimedia Commons、柏林自然博物馆动物声音档案（Tierstimmenarchiv）和 iNaturalist，均为知识共享授权。详细来源见 [CREDITS.md](CREDITS.md)。
 
-## 三种使用方式
+## 四种使用方式
 
 | 方式 | 适合 | 需要 |
 |---|---|---|
 | 网页版（PWA） | 所有平台，最省事 | 一个能打开网页的浏览器 |
 | iOS App | iPhone 用户想要原生体验 | Mac、Xcode、你自己的 Apple ID |
 | Android App | Android 用户 | 一台 Android 手机 |
+| 微信小程序 | 想在微信里直接打开 | 微信、小程序开发者账号 |
 
 ---
 
@@ -74,12 +75,24 @@ Android 的 APK 用普通自签名证书即可安装，**不需要付费账号�
 
 ---
 
+## 微信小程序
+
+小程序是一个完整重写的版本（小程序不能直接跑网页代码），功能和玩法与其他三端一致，图片和叫声通过 CDN 首次联网时自动下载到本机，之后离线可用。完整步骤、白名单配置和发布方法见 [`WildPocket-MiniProgram/README.md`](WildPocket-MiniProgram/README.md)。
+
+1. 用微信开发者工具打开 `WildPocket-MiniProgram/` 目录。
+2. 在 mp.weixin.qq.com 后台的"服务器域名"里，给 downloadFile 加一条白名单：`https://cdn.jsdelivr.net`。
+3. 把 `project.config.json` 里的 `appid` 改成你自己的小程序 AppID。
+4. 编译预览，或点"上传"生成体验版 / 提交审核。
+
+---
+
 ## 项目结构
 
 ```
 work/safari/dist/          网页版源码，唯一的内容源头（图鉴数据、照片、叫声、离线逻辑）
 WildPocket-iOS/             iOS 工程（WKWebView 包装），Resources/Web 由 dist 同步而来
 WildPocket-Android/         Android 工程（WebView 包装），assets/www 由 dist 同步而来
+WildPocket-MiniProgram/     微信小程序工程，图片与叫声通过 CDN 读取 work/safari/dist 的内容
 CREDITS.md                  全部照片与叫声的作者、许可与来源
 ```
 

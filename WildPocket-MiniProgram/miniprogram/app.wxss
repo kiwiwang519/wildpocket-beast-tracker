@@ -1,0 +1,16 @@
+page {
+  --ink: #172e25;
+  --paper: #f6f5ee;
+  --muted: #617065;
+  --line: #dce1d7;
+  --accent: #dfed8c;
+  background: #fff;
+  color: var(--ink);
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+view, text, button { box-sizing: border-box; }
+button { margin: 0; padding: 0; font-size: inherit; line-height: normal; }
+button::after { border: none; }
+.eyebrow { font-size: 22rpx; color: var(--muted); letter-spacing: 1px; margin-bottom: 4rpx; }
+.tag-pill { display: inline-block; padding: 4rpx 18rpx; border-radius: 99px; font-size: 22rpx; font-weight: 600; }

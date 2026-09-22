@@ -13,13 +13,14 @@ An offline field guide to East African wildlife, built for ordinary travellers h
 - **Fully offline** — every photo, story and sound is downloaded to the device the first time you open it online (web version) or bundled directly into the install package (iOS/Android apps). After that it works with no connection at all.
 - **Animal calls** — 38 species have real recordings sourced from Wikimedia Commons, the Berlin Natural History Museum's Tierstimmenarchiv (animal sound archive), and iNaturalist, all under Creative Commons licences. Full attribution in [CREDITS.md](CREDITS.md).
 
-## Three ways to use it
+## Four ways to use it
 
 | Method | Best for | You need |
 |---|---|---|
 | Web app (PWA) | Everyone, the easiest path | Any browser |
 | iOS app | iPhone users who want a native app | A Mac, Xcode, your own Apple ID |
 | Android app | Android users | An Android phone |
+| WeChat Mini Program | Opening it straight inside WeChat | WeChat, a Mini Program developer account |
 
 ---
 
@@ -74,12 +75,24 @@ To build it yourself, run `./build-apk.sh` from the `WildPocket-Android/` direct
 
 ---
 
+## WeChat Mini Program
+
+The Mini Program is a full rewrite (Mini Programs can't run regular web code), matching the features of the other three. Photos and sounds are fetched from a CDN on first launch and cached locally for offline use afterwards. Full setup, domain whitelisting and publishing steps are in [`WildPocket-MiniProgram/README.md`](WildPocket-MiniProgram/README.md) (Chinese only, since Mini Program publishing is a Chinese-platform workflow).
+
+1. Open `WildPocket-MiniProgram/` in WeChat DevTools.
+2. In the Mini Program admin console (mp.weixin.qq.com), add `https://cdn.jsdelivr.net` to the downloadFile domain whitelist.
+3. Set your own Mini Program AppID in `project.config.json`.
+4. Compile and preview, or upload a trial/review version.
+
+---
+
 ## Project layout
 
 ```
 work/safari/dist/          The web app source — the single source of truth (animal data, photos, sounds, offline logic)
 WildPocket-iOS/             iOS project (WKWebView wrapper); Resources/Web is synced from dist
 WildPocket-Android/         Android project (WebView wrapper); assets/www is synced from dist
+WildPocket-MiniProgram/     WeChat Mini Program project; photos and sounds are fetched via CDN from work/safari/dist
 CREDITS.md                  Every photo and audio clip's author, licence and source link
 ```
 

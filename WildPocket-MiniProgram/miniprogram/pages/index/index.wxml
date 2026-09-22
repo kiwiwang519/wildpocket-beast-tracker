@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="sticky-filters">
+    <view class="filters-row">
+      <view class="location-control">
+        <text class="eyebrow">地点</text>
+        <picker mode="selector" range="{{locations}}" range-key="label" value="{{routeIndex}}" bindchange="onRouteChange">
+          <view class="location-select">{{routeLabel}} <text class="chev">⌄</text></view>
+        </picker>
+      </view>
+      <view class="time-control">
+        <text class="eyebrow">观察时段</text>
+        <view class="time-options">
+          <view class="time-btn {{period==='day' ? 'active' : ''}}" data-period="day" bindtap="onPeriod">☀️ 日间</view>
+          <view class="time-btn {{period==='night' ? 'active' : ''}}" data-period="night" bindtap="onPeriod">🌙 夜间</view>
+        </view>
+      </view>
+    </view>
+    <view class="search">
+      <input placeholder="搜名字或特征，如：斑点、长角" value="{{query}}" bindinput="onSearch" confirm-type="search" />
+    </view>
+    <scroll-view class="categories" scroll-x enable-flex>
+      <view wx:for="{{categories}}" wx:key="*this" class="cat-btn {{category===item ? 'active' : ''}}" data-cat="{{item}}" bindtap="onCategory">{{item}}</view>
+    </scroll-view>
+    <view class="results-row">
+      <text class="count">{{list.length}} 种动物{{seenCountText}}</text>
+      <view class="result-actions">
+        <view class="sort-btn" bindtap="onSort">{{sortAsc ? '↑' : '↓'}} 概率</view>
+        <view class="seen-btn {{onlyUnseen ? 'active' : ''}}" bindtap="onOnlyUnseen">只看未见过</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{list.length===0}}" class="empty">
+    {{onlyUnseen ? '当前筛选下的动物你都见过了。可取消"只看未见过"查看全部。' : '没有符合当前条件的动物。试试其他地点、时段，或清空搜索。'}}
+  </view>
+
+  <view class="grid">
+    <view class="card" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}">
+      <view class="card-open" data-id="{{item.id}}" bindtap="openDetail">
+        <view class="photo">
+          <image src="{{item.src}}" mode="aspectFill" lazy-load />
+          <text class="tag">{{item.label}}</text>
+          <text class="probability">{{item.probLabel}}</text>
+        </view>
+        <view class="card-text">
+          <view class="name">{{item.name}}</view>
+          <view class="en">{{item.en}}</view>
+        </view>
+      </view>
+      <view class="card-seen {{item.isSeen ? 'active' : ''}}" data-id="{{item.id}}" catchtap="onToggleSeen">
+        {{item.isSeen ? '✓ 见过 · 取消' : '＋ 见过'}}
+      </view>
+    </view>
+  </view>
+  <view style="height:24rpx"></view>
+</view>

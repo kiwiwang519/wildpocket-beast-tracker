@@ -1,0 +1,38 @@
+<view class="mine-page">
+  <view class="page-title">动物收集进度</view>
+
+  <view class="summary-card">
+    <view>
+      <view class="summary-count">{{seenCount}} / {{total}}</view>
+      <view class="summary-label">已遇见</view>
+    </view>
+    <view class="meter"><view class="meter-fill" style="width:{{percent}}%"></view></view>
+    <view class="summary-percent">{{percent}}%</view>
+  </view>
+
+  <view class="offline-row" bindtap="onOfflineTap">
+    <text class="offline-icon">{{download.complete ? '✓' : '↓'}}</text>
+    <text class="offline-title">离线资料</text>
+    <text class="offline-status">{{offlineStatusText}}</text>
+    <text class="chev">›</text>
+  </view>
+  <view wx:if="{{download.total>0 && !download.complete}}" class="offline-progress">
+    <view class="offline-progress-fill" style="width:{{downloadPercent}}%"></view>
+  </view>
+
+  <view class="rarity-row">
+    <view wx:for="{{rarityGroups}}" wx:key="id" class="rarity-card {{item.id===activeRarity ? 'active' : ''}}" data-id="{{item.id}}" bindtap="onRarity">
+      <view class="rarity-top"><text>{{item.name}}</text><text class="rarity-pct">{{item.ratio}}%</text></view>
+      <view class="rarity-count">{{item.seenCount}}/{{item.animals.length}}</view>
+      <view class="rarity-bar"><view class="rarity-bar-fill" style="width:{{item.ratio}}%"></view></view>
+    </view>
+  </view>
+
+  <view class="collection-grid">
+    <view class="collection-item {{item.collected ? 'collected' : ''}}" wx:for="{{activeAnimals}}" wx:key="id" data-id="{{item.id}}" bindtap="onOpenAnimal">
+      <image src="{{item.src}}" mode="aspectFill" class="{{item.collected ? '' : 'grey'}}" />
+      <text class="collection-name">{{item.name}}</text>
+    </view>
+  </view>
+  <view style="height:24rpx"></view>
+</view>
