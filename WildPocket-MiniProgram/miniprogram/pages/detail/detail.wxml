@@ -18,6 +18,15 @@
     <view class="section-title">认准这几个特征</view>
     <view class="trait" wx:for="{{animal.traits}}" wx:key="*this">· {{item}}</view>
 
+    <block wx:if="{{animal.facts}}">
+      <view class="section-title">数量与分布</view>
+      <view class="facts-row">
+        <view class="facts-item"><text class="facts-label">全球数量预估</text><text class="facts-value">{{animal.facts.population}}</text></view>
+        <view class="facts-item"><text class="facts-label">主要生活地区</text><text class="facts-value">{{animal.facts.range}}</text></view>
+      </view>
+      <view class="facts-source">数据来源：{{animal.facts.sourceLabel}}</view>
+    </block>
+
     <view wx:if="{{call}}" class="sound-card">
       <view class="sound-row">
         <view class="sound-play {{playing ? 'playing' : ''}}" bindtap="onPlaySound">{{playing ? '❚❚' : '▶'}}</view>

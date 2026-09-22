@@ -79,7 +79,22 @@ class MainActivity : Activity() {
         webView.loadUrl("file:///android_asset/www/index.html")
     }
 
+    // The detail page is a <dialog> shown/hidden with JS (showModal()/close()), not a
+    // URL change, so it never adds a browser-history entry — webView.canGoBack() alone
+    // has no idea it's open. Before this fix, the system back gesture/button fell
+    // straight through to super.onBackPressed() and exited the app while a detail page
+    // was still open, instead of just closing it. Ask the page itself first (mirrors
+    // what our own on-screen back button does), and only fall back to
+    // webView.goBack()/exit if nothing was open to close.
     override fun onBackPressed() {
-        if (webView.canGoBack()) webView.goBack() else super.onBackPressed()
+        webView.evaluateJavascript(
+            "(function(){var d=document.querySelector('dialog[open]');if(d){d.close();return true}return false})()"
+        ) { result ->
+            if (result != "true") {
+                runOnUiThread {
+                    if (webView.canGoBack()) webView.goBack() else super.onBackPressed()
+                }
+            }
+        }
     }
 }
