@@ -977,5 +977,14 @@ const GALLERY={
    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
    "source": "https://commons.wikimedia.org/wiki/File:Agama_mwanzae_%E2%99%80_Serengeti_Tanzania_(19701447303).jpg"
   }
+ ],
+ "whiteheadedvulture": [
+  {
+   "file": "./assets/photos/whiteheadedvulture-2.jpg",
+   "author": "Seig",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "source": "https://commons.wikimedia.org/wiki/File:White-headed_Vulture,_Manyara,_TZ_imported_from_iNaturalist_photo_52268654.jpg"
+  }
  ]
 };
